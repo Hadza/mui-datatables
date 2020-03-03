@@ -16,6 +16,9 @@ MUI-Datatables is a data tables component built on [Material-UI](https://www.mat
 	<img src="https://user-images.githubusercontent.com/19170080/38026128-eac9d506-3258-11e8-92a7-b0d06e5faa82.gif" />
 </div>
 
+## Modifications on fork
+- Added the ability to hide the toolbar showed when you selected at least one row.
+
 ## Install
 
 `npm install mui-datatables --save`
@@ -43,6 +46,7 @@ const data = [
 
 const options = {
   filterType: 'checkbox',
+  disableToolbarSelect: true,
 };
 
 <MUIDataTable
@@ -142,6 +146,7 @@ The component accepts the following props:
 |**`textLabels`**|object||User provided labels to localize text
 |**`pagination`**|boolean|true|Enable/disable pagination
 |**`selectableRows`**|string|'multiple'|Numbers of rows that can be selected. Options are "multiple", "single", "none".
+|**`disableToolbarSelect`**|boolean|false|Enable/disable toolbar when rows are selected", "single", "none".
 |**`selectableRowsOnClick`**|boolean|false|Enable/disable select toggle when row is clicked. When False, only checkbox will trigger this action.
 |**`isRowSelectable`**|function||Enable/disable selection on certain rows with custom function. Returns true if not provided. `function(dataIndex: number, selectedRows: object(lookup: {dataindex: boolean}, data: arrayOfObjects: {index, dataIndex})) => boolean`.
 |**`isRowExpandable`**|function||Enable/disable expansion or collapse on certain expandable rows with custom function. Will be considered true if not provided. `function(dataIndex: number, expandedRows: object(lookup: {dataIndex: number}, data: arrayOfObjects: {index: number, dataIndex: number})) => boolean`.
